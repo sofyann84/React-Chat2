@@ -11,6 +11,8 @@ router.get('/', function (req, res, next) {
   })
 });
 
+
+/* Add data */
 router.post('/', function (req, res, next) {
   const { id, name, message } = req.body;
   Chat.create({ id, name, message }).then((data) => {
@@ -20,6 +22,8 @@ router.post('/', function (req, res, next) {
   })
 });
 
+
+/* delete Data */
 router.delete('/:id', function (req, res, next) {
   const { id } = req.params;
   Chat.findOneAndRemove({id: Number(id)}).then((data) => {
